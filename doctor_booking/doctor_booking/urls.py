@@ -22,6 +22,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/login/',TokenObtainPairView.as_view()),
     path('api/token/refresh/',TokenRefreshView.as_view()),
-    path('api/accounts/',include('accounts.urls'))
+    path('api/accounts/',include('accounts.urls')),
+    path("api/appointments/", include("appointments.urls")),
     
 ]

@@ -28,6 +28,6 @@ class ProfileSerializer(serializers.ModelSerializer):
 
         class Meta:
             model = Profile
-            fields = ["username",  "role"]
+            fields = ["username","role"]
             read_only_fields = ["role"] 
         
