@@ -15,7 +15,15 @@ class RegisterView(APIView):
         serializers.is_valid(raise_exception=True)
         serializers.save()
         return Response({"message":"Registered succesfully....✅"})
-    
+
+
+
+class ProfileView(generics.RetrieveUpdateAPIView):
+    serializer_class = ProfileSerializer
+    permission_classes = [IsAuthenticated]
+
+    def get_object(self):
+        return self.request.user.profile
 
 
 class DoctorProfileListCreateView(generics.ListCreateAPIView):
